@@ -1,0 +1,20 @@
+<html>
+    <head>
+       <title>Dojo News </title>
+       <!-- linking a css style sheet -->
+ <!--      
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    -->
+    </head>
+    <body>
+      <h1>Dojo News for Dojo's</h1>
+      <h1>Hello Dojo </h1>
+      <h3>Create a Dojo User</h3>
+      <!-- read on to learn about form actions, we'll talk about the method in a later section -->
+      <form action='/process' method='post'>
+          Name: <input type='text' name='name'>
+          Email: <input type='text' name='email'>
+          <input type='submit' value='create user'>
+      </form>
+    </body>
+</html>

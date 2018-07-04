@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>All Ninjas</title>
+      
+      <meta name="description" content="My super blog about my advetures in space. Exploring and boldy going
+        where no man has gone before with my friends, Spok, Bones, Checkov and Ahuru." > 
+
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+      <!-- linking a javascript file -->   
+      <script type="text/javascript" src="{{ url_for('static', filename='js/my_script.js') }}"></script>
+        
+   </head> 
+
+   <body>
+       <div id="wrapper">
+           <div id="header">
+                <h2><a href="/"> Ninjas to the Rescue</a></h2>
+                <img src="{{imgsrc}}">               
+           </div>
+           
+         
+      </div><!-- end of wrapper -->
+   </body>
+</html>

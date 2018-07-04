@@ -1,0 +1,37 @@
+<html>
+    <head>
+       <title>Dojo Survey </title>
+       <!-- linking a css style sheet -->
+       {% load static %}
+       <!-- The line above tells Django to be ready to listen for static files -->
+       <link rel="stylesheet" href="{% static 'survey/css/styles.css' %}"
+        media="screen" title="no title"  charset="utf-8">
+          
+    </head>
+    <body>
+      <div id="wrapper"> 
+      <div id="resultdiv" >
+
+          <h1>Dojo Survey</h1>
+          <h2>We Know Lots Now</h2>
+          <h3>Get to Know a Dojo User</h3>
+          <p id="pg">Thanks for submiiting this form! You have 
+              submitted this form {{ request.session.counter }} times now.
+          </p>
+          <h3>Submitted Information</h3>
+          {% if user %}
+          <table id = 'mytable'>
+            <tr><td>Name:</td><td>{{user.name}}</td></tr>
+            <tr><td>Location:</td><td>{{user.loco}}</td></tr>
+            <tr><td>Favorite Language:</td><td>{{user.fav}}</td></tr>
+            <tr><td>Email:</td><td>{{user.email}}</td></tr>
+            <tr><td>Comment:</td><td>{{user.comment}}</td></tr>
+          </table>
+          {% endif %}
+          
+          <button title="go to home page"><a href="/">Home</a></button>
+          <button title="reset the counter"><a href="/reset">Reset</a></button>     
+      </div> 
+    </div>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>The Wall</title>
+        <meta charset='UTF-8'>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='thewall.css') }}">
+    </head>
+
+    <body>
+        <div id='wrapper'>
+            
+            <div id='row1'>
+                <h1>Coding Dojo Wall</h1>
+            </div>
+
+            <form action='/postMessage' method='post'>
+                <label>Post a message</label>
+                <input type='text' name='message'>
+                <input type='submit' class='myButton' value='post'>            
+            </form>
+            
+            {% if session['ordered_data']: %}
+                {% for n in session['ordered_data']: %}
+                        <form action='/postComment' method='post' class='mdiv'>
+                            <p class='subtitles'>{{ n[0][1] }} {{ n[0][2] }}</p>
+                            <p class='messages'>{{n[0][0]}}</p>
+                            {% for message_tuples in n[1]: %}
+                            <p class='messages'>{{ message_tuples[0] }}</p>
+                            {% endfor %}
+                            <input type='hidden' name='msgid'  value='{{ n[0][3] }}'>                            
+                            
+                            <label>Post a comment</label>
+                            <input type='text' name='comment' id='comment_box'>
+                            <input type='submit' class='myButton2' value='comment'>
+                        </form>   
+                {% endfor %}
+            {% endif %}
+
+        </div>
+       
+    </body>
+
+</html>

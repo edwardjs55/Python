@@ -1,0 +1,22 @@
+<html>
+    <head>
+       <title>Dojo Survey Says </title>
+       <!-- linking a css style sheet -->
+ <!--      
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    -->
+    </head>
+    <body>
+      <h1>Dojo Survey Results</h1>
+      <h2> Now We Know</h2>
+      <h3>And It's too much..</h3>
+      <!-- read on to learn about form actions, we'll talk about the method in a later section -->
+      <h4> Name: {{ thename }} </h4>
+      <h4> Location: {{location}}</h4>
+      <h4>Favorite Language: {{fav}}</h4>
+      <h4>Email: {{email}}</h4>
+      <p>
+          {{ comments}}
+      </p>
+    </body>
+</html>

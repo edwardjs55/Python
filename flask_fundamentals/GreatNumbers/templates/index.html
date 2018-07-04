@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title> Great Numbers Game</title>
+      
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='great_styles.css') }}">
+      <!-- linking a javascript file -->   
+      <script type="text/javascript" src="{{ url_for('static', filename='js/my_script.js') }}"></script>     
+      
+   </head> 
+
+   <body>
+       <div id="wrapper">
+           <div id="header">
+                <h1>Welcome to the Great Numbers Game</h1>
+                <h3> I am thinking of a number between 1 and 100</h3>
+                <h4> Take a guess !!</h4>
+
+                {% if session['result'] == 'low' %}
+                        <p class='red'>Nope, you Guessed too Low...</p>
+                       {% endif %}
+                       {% if session['result'] == 'high' %}
+                        <p class='blue'>Nope, you Guessed too High..."</p>
+                       {% endif %}
+                       {% if session['result'] == 'win' %}
+                        <p class='gold'>Winner !!! you Guessed just right..</p>
+                       {% endif %}
+                       {% if session['result'] == 'empty' %}
+                        <p class='gold'>Oh, you must enter a # to play..</p>
+                {% endif %}
+               
+                <form action="/submit" name="form1" id="form1" method="post">
+                    <input type="number" id="guess" name="guess" autofocus >
+                    <input type="submit" name="submit" Value="Submit">
+                    <!-- <input type="submit" name="reset" formaction="/reset" Value="Reset"> -->
+                </form> 
+               
+                   <!-- <div class="gray" id="text"> -->
+                       
+                   <!-- </div> -->
+                   <button type="submit" form ="form1" formaction="/reset">Reset</button>
+                               
+           </div>
+           
+         
+      </div><!-- end of wrapper -->
+   </body>
+</html>

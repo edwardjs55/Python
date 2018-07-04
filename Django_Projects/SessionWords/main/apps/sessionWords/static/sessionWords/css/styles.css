@@ -1,0 +1,30 @@
+.block {
+    display: block;
+}
+h1 {
+    padding-left: 23px;
+}
+.iblock {
+    display: inline-block;
+}
+
+#worddiv {
+    vertical-align: top;
+    border-left: 1px solid black;
+}
+div {
+    height: 200px;
+    padding: 0px 40px;
+}
+.red {
+    color: red;
+}
+.blue {
+    color: blue;
+}
+.green {
+    color: green;
+}
+.big {
+    font-size: 150%;
+}

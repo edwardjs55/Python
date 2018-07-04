@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Destinations</title>
+</head>
+<body>
+        <a href="/home">home</a>
+        <a href="/logout">logout</a>
+    {% if tripinfo %}
+        <h1>{{ tripinfo.destination }}</h1>
+        <h3>Planned by : {{ tripinfo.planner.name }}</h3>
+        <h3>Description: {{ tripinfo.description }} </h3>
+        <h3>Travel Date from: {{ tripinfo.travel_start }}</h3>
+        <h3>Travel Date to: {{ tripinfo.travel_end }}</h3>
+
+    {% endif %}
+    
+    <h2>Other user's joining the Trip</h2>
+    {% if othernames %}
+        {{ othernames.name }}
+    {% endif %}
+
+</body>
+</html>

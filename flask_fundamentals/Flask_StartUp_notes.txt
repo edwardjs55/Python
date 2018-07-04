@@ -1,0 +1,29 @@
+Windows
+
+Install : python -m pip install virtualenv
+
+To create a virtual environment(do ONCE ONLY)
+
+python -m virtualenv flaskEnv
+
+***** Activation Process **************
+
+cd to the parent Directory of our virtual Environments
+
+..codingDojo\Class Work\Python\myEnvironments
+
+Activation Command:
+   call flaskEnv/Scripts/activate
+
+Test:
+   pip list
+
+IF Flask needed: pip install flask
+
+******************
+
+localhost:5000 to see your stuff..
+
+Remember: CALL/LOAD SCRIPTS VIA Python -- 
+
+ python server.py

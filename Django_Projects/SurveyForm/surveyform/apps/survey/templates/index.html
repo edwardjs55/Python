@@ -1,0 +1,45 @@
+<html>
+    <head>
+       <title>Dojo Survey </title>
+       <!-- linking a css style sheet -->
+       {% load static %}
+       <!-- The line above tells Django to be ready to listen for static files -->
+       <link rel="stylesheet" href="{% static 'survey/css/styles.css' %}"
+        media="screen" title="no title"  charset="utf-8">
+          
+    </head>
+    <body>
+      <div id="wrapper">  
+      <div id="myformdiv">
+      <h1>Dojo Survey</h1>
+      <h2>We Wanna Know</h2>
+      <h3>Create a Dojo User</h3>
+      <form action='survey/process' method='post'>
+            {% csrf_token %}
+          <label for="name">Name</label>
+          <input type='text' id='name' name="name" value='Joe Manucci'>
+          <label for="location">Location</label>
+          <select name="location">
+              <option value="San Jose">San Jose</option>
+              <option value="Dallas">Dallas</option>
+              <option value="Washington DC">Washington</option>
+              <option value="Seattle">Seattle</option>
+              <option value="Kansas City">Kansas City</option>
+            </select>
+          <label for="favlang">Favorite Language</label>  
+          <select name="favLang">
+              <option value="Python">Python</option>
+              <option value="JavaScript">JavaScript</option>
+              <option value="HTML">HTML</option>
+              <option value="C##">C##</option>  
+          </select>
+          <label for="comments">Comments</label>
+          <textarea name="comments" id="comments" cols="25" rows="7" >I am a wild n Crazy Guy.
+          </textarea>
+          Email: <input type='text' name='email' value='Jmanucci@whitehouse.gov'>
+          <input type='submit' value='submit'>
+        </form>
+        </div>
+    </div>
+    </body>
+</html>

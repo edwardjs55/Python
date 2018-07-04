@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Registration & Login   </title>
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='users.css')}}" />
+
+</head>
+<body>
+    <div>
+        <h1>Login</h1>
+        {% with messages = get_flashed_messages(category_filter =['login']) %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="red">{{message}}</p>
+                    {% endfor %}
+        {% endif %}
+        {% endwith %} 
+        <form action="/login" method="POST">
+            <label for="email">E-mail:</label>
+            <input type="text" name='email' id='email' value="smojo@gmail.com">
+            <label for="password" title='must be 8 character at least'>Password:</label>
+            <input type="text" name="password" id="password">
+            <input type="submit" value="Login">
+            </form>
+    </div>
+    <div>
+        <h1>Registration</h1>
+        {% with messages = get_flashed_messages(category_filter =['registration']) %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="red">{{message}}</p>
+                    {% endfor %}
+        {% endif %}
+        {% endwith %}  
+        <form action="/register" method="POST">
+            <label for="firstname">First Name:</label>
+            <input type="text" name='firstname' id='firstname' value="Edward">
+            <label for="lastname">Last Name:</label>
+            <input type="text" name='lastname' id='lastname' value="Solon">
+            <label for="email">E-mail:</label>
+            <input type="text" name='email' id='email' value="smojo11@gmail.com">
+            <label for="password">Password:</label>
+            <input type="text" name='password' id='password' value="myPassword">
+            <label for="confirm">Confirm Password:</label>
+            <input type="text" name='confirm' id='confirm' value="">
+            <input type="submit" value="Register">
+            </form>
+
+    </div>
+</body>
+</html>

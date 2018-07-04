@@ -1,0 +1,35 @@
+
+#wrapper {
+    width: 970px;
+    height:500px;
+    margin: auto;
+}
+#content {
+    width:500px;
+    height: 500px;
+    border: 1px solid black;
+    text-align: center;
+}
+form {
+    margin-top: 250px;
+}
+input[type='text'] {
+    width: 250px;
+}
+.green {
+    background-color: rgb(177, 230, 177);
+}
+.red {
+    background-color: red;
+}
+.success {
+    width: 300px;
+    padding: 25px;
+    margin-left: 75px;
+}
+.none {
+    background-color: none;
+}
+button a {
+    text-decoration: none;
+}

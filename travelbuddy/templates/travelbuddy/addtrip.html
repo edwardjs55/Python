@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}                
+    <link rel="stylesheet" type="text/css" href="{%static 'travelbuddy/css/style.css' %}">
+    <title>Add a new Trip</title>
+</head>
+<body>
+    <h1>Add a Trip</h1>
+    <a href="/logout">logout</a>
+    <a href="/home">home</a>
+    {% if messages %}
+        <ul>
+        {% for message in messages %}
+            <li>{{ message}} </li>
+        {% endfor %}
+        </ul>
+    {% endif%}
+    <form action="/createtrip" method="POST">
+        <h3>Login</h3>
+        {% csrf_token %}
+        <label for="destination">Destination</label>
+        <input type="text" name="destination" id="destination" value='Mars'>
+        <label for="description">Description</label>
+        <input type="text" name="description" id="description" value='Collect rocks'>
+        <label for="travelstart">Travel Date From:</label>
+        <input type="date" name="travelstart" id="travelstart">
+        <label for="travelend">Travel Date To:</label>
+        <input type="date" name="travelend" id="travelend" >                    
+        <input type="submit" value="Add">
+    </form>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+<head>
+  <title>Friends</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='FullFriends.css')}}" />
+</head>
+<body>
+ 
+  <h1>Friends:</h1>  
+
+<div>
+  {% if all_friends: %}
+  <table id="mytable">
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Friends Since</th>
+        <th>Year</th>
+      </tr>
+  {% for friend in all_friends: %}  
+    <tr>
+      <td>{{friend['name']}}</td>
+      <td>{{friend['age']}}</td>
+      <td>{{friend['since']}}</td>
+      <td>{{friend['year']}}</td>
+    </tr>
+
+  {% endfor %}
+</table>
+  {% endif %}
+</div>
+<div>
+  <h2>Add a Friend:</h2>
+  <form action='/friends' id="myform" method='POST'>
+    <label for="first_name">First Name:<input type="text" name="first_name" id="first_name" value="Edward"></label>
+    <label for="last_name">Last Name:<input type="text" name="last_name" id="last_name" value="Solon"></label>      
+    <label for="age">Age:<input type="number" name="age" id="age" value="12"></label>
+    <label for="friends_since">Friends Since:<input type="date" name="friends_since" id="friends_since" value="2001-01-01"></label>
+    <input type="submit" value="Add">
+  </form>
+</div>
+</body>
+</html>

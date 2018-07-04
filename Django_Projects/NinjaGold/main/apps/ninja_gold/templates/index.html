@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+
+    <title>Ninja Money</title>
+</head>
+
+<body>
+    <div class="container w-25">
+        <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Your Gold:</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="{{request.session.gold}}">
+        </div>
+    </div>
+    <div class="container">
+        <form action="/process_money" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col border border-primary text-center">
+                    <p>Farm</p>(earns 10-20 golds):
+                    <p>
+                        <input type="hidden" name="building" value="farm1">
+                        <input type="submit" name="farm1">
+                    </p>
+                </div>
+        </form>
+
+        <form action="/process_money" method="post">
+            {% csrf_token %}
+            <div class="col border border-primary text-center">
+                <p>Cave</p>(earns 5-10 golds):
+                <p>
+                    <input type="hidden" name="building" value="cave1">
+                    <input type="submit" name="cave1">
+                </p>
+            </div>
+        </form>
+
+        <form action="/process_money" method="post">
+            {% csrf_token %}
+            <div class="col border border-primary text-center">
+                <p>House</p>(earns 2-5 golds):
+                <p>
+                    <input type="hidden" name="building" value="house1">
+                    <input type="submit" name="house1">
+                </p>
+            </div>
+        </form>
+
+        <form action="/process_money" method="post">
+            {% csrf_token %}
+            <div class="col border border-primary text-center">
+                <p>Casino</p>(earns/takes 0-50 golds):
+                <p>
+                    <input type="hidden" name="building" value="casino1">
+                    <input type="submit" name="casino1">
+                </p>
+            </div>
+        </form>
+        <div class="container w-75">        
+            <textarea cols="100" rows="10">
+                {% for logs in request.session.logs %}
+                {{logs}}
+                {% endfor %}
+            </textarea>
+        </div>     
+    </div>
+        <!-- {% for logs in request.session.logs %}
+        <p>{{logs}}</p>
+        {% endfor %} -->
+</body>
+</html>
+
+
+
+
+<!-- <form action="/process_money" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="building" value="farm1">
+        <p>Farm (earns 10-20 golds):</p>
+        <input type="submit" name="farm1">
+    </form> -->
+<!-- <form action="/process_money" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="building" value="cave1">
+        <p>Cave (earns 5-10 golds):</p>
+        <input type="submit" name="cave1">
+    </form> -->
+<!-- <form action="/process_money" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="building" value="house1">
+        <p>House (earns 2-5 golds):</p>
+        <input type="submit" name="house1">
+    </form> -->
+<!-- <form action="/process_money" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="building" value="casino1">
+        <p>Casino (earns/takes 0-50 golds):</p>
+        <input type="submit" name="casino1">
+    </form> -->

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Amadon Shopping</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  {% load static %}
+  <!-- The line above tells Django to be ready to listen for static files -->
+  <link rel="stylesheet" href="{% static 'amadon/css/styles.css' %}">
+  
+</head>
+<body>    
+    <div class="jumbotron text-center" id="header">
+        <h1>Amadon Store</h1>
+        <h6>Buy Cool Coding Dojo Stuff</h6> 
+    </div>    
+    <div class="container" id="wrapper">
+        <!-- Or let Bootstrap automatically handle the layout -->
+        <strong>            
+            <div class="row">
+                <label for="" class="col-sm-3">Description</label>
+                <label for="" class="col-sm-3">Price</label>
+                <label for="" class="col-sm-3">Quantity</label>
+                <label for="" class="col-sm-3">Action</label>
+            </div>      
+        </strong>
+        <form action="amadon/buy" method="POST">
+            {% csrf_token %}
+            <div class="form-row align-items-center">                
+            <input type="hidden" name="desc" value="Dojo T-Shirt">
+                <div class="col-sm-3">
+                    Dojo T-Shirt
+                </div>
+                <div class="col-sm-3">
+                    $19.99
+                </div>
+                <div class="col-sm-3">
+                    <select name="quantity" id="quantity" class="col">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    </select>
+                </div>
+                <input type='hidden' name='item' id="item" value='1' /> <!-- ITEM Number -->                
+                <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-2">Buy</button>
+                </div>
+            </div>
+        </form>
+        
+        <form action="amadon/buy" method="POST">
+            {% csrf_token %}
+                <div class="form-row align-items-center">
+                    <input type="hidden" name="desc" value="Dojo Sweater">
+                    <div class="col-sm-3">
+                        Dojo Sweater
+                    </div>
+                    <div class="col-sm-3">
+                        $29.99
+                    </div>
+                    <div class="col-sm-3">
+                        <select name="quantity" id="quantity" class="col">
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        </select>
+                    </div>
+                    <input type='hidden' name='item' value='2' />                
+                    <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mb-2">Buy</button>
+                    </div>
+                </div>
+        </form>
+        <form action="amadon/buy" method="POST">
+            {% csrf_token %}
+                <div class="form-row align-items-center">                
+                <input type="hidden" name="desc" value="Dojo Cup">
+                    <div class="col-sm-3">
+                        Dojo Cup
+                    </div>
+                    <div class="col-sm-3">
+                        $4.99
+                    </div>
+                    <div class="col-sm-3">
+                        <select name="quantity" id="quantity" class="col">
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        </select>
+                    </div>
+                    <input type='hidden' name='item' value='3' />                
+                    <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mb-2">Buy</button>
+                    </div>
+                </div>
+        </form>
+        <form action="amadon/buy" method="POST">
+            {% csrf_token %}
+                <div class="form-row align-items-center">
+                <input type="hidden" name="desc" value="Algorithm Book">
+        
+                    <div class="col-sm-3">
+                        Algorithm Book
+                    </div>
+                    <div class="col-sm-3">
+                        $29.99
+                    </div>
+                    <div class="col-sm-3">
+                        <select name="quantity" id="quantity" class="col">
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        </select>
+                    </div>
+                    <input type='hidden' name='item' value='4' />                
+                    <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mb-2">Buy</button>
+                    </div>
+                </div>
+        </form>
+        <button class="btn btn-primary mb-2"><a href="/reset">Reset</a></button>        
+        
+        
+    </div> <!-- Wrapper Div end -->
+        <!-- Optional JavaScript ;    Page Loads Faster with these scripts at end  -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>        
+</body>
+</html>

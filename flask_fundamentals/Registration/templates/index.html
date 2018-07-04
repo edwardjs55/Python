@@ -1,0 +1,38 @@
+<html>
+    <head>
+       <title>User Registration</title>
+       <!-- linking a css style sheet -->
+      
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='register.css') }}">
+    
+    </head>
+    <body>
+      <div id="wrapper">  
+      <h1>User Registration</h1>
+      
+      <h3>Register a Dojo User</h3>
+      <!-- read on to learn about form actions, we'll talk about the method in a later section -->
+      <form action='/register' method='post'>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+          <label for="fname">First Name</label>
+          <input type='text' id='fname' name="fname" value="{{ name }}">
+          <label for="lname">Last Name</label>
+          <input type='text' id='lname' name="lname">
+          <label for="email">Email</label>
+          <input type='text' name='email'>
+          <label for="password">Password</label>
+          <input type='password' id='password' name="password">
+          <label for="confirm">Confirm Password</label>
+          <input type='password' id='confirm' name="confirm">
+          <input type='submit' value='Register'>
+        </form>
+    </div>
+    </body>
+</html>

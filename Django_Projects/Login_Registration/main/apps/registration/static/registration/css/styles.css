@@ -1,0 +1,67 @@
+
+#wrapper {
+    margin: auto;
+    width:950px;
+    text-align: center;
+    border: 1px solid black;
+}
+#header {
+    height: 100px;
+    background-color: lightblue;
+    border: 1px solid black;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+.red {
+    color: red;
+}
+input {
+    display: block;
+    margin: 4px;
+}
+input[type='submit']{
+    margin: 10px auto;
+}
+.fit {
+    width: fit-content;
+}
+form {
+    margin: auto;
+}
+h1 , p {
+    text-align: center;
+    margin: 10px 5px;
+}
+#login, #registration {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0px 30px 30px 30px;
+}
+.inline {
+    display: inline;
+}
+.right {
+    text-align: right;
+}
+#homeicon {
+    position: relative;
+    left: 250px;
+}
+legend { 
+    display: block;
+    padding-left: 2px;
+    padding-right: 2px;
+    border: none;
+    font-weight: bold;
+}
+fieldset.scheduler-border {
+    border: solid 1px darkgrey !important;     /* #DDD */
+    padding: 0 10px 10px 10px;
+    border-bottom: none;
+}
+
+legend.scheduler-border {
+    width: auto !important;
+    border: none;
+    font-size: 14px;
+}

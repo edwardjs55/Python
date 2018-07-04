@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <!-- The line above tells Django to be ready to listen for static files -->
+    <link rel="stylesheet" href="{% static 'sessionWords/css/styles.css' %}" media="screen" title="no title"  charset="utf-8">
+    <title>Document</title>
+</head>
+<body>
+        <h1>Add a new word</h1>
+    <div class="iblock">
+        <form action="addWord" method="POST">
+                {% csrf_token %}
+            <input type="text" class="block" name="word" value="New Words">
+            <input type="radio" name="color" value="red" checked >Red<br>
+            <input type="radio" name="color" value="green">Green<br>
+            <input type="radio" name="color" value="blue">Blue<br><br>
+            <input type="checkbox" name="size" value="True">Show in BIG Fonts!<br>
+            <br>
+            <input type="submit" class="block" value="Add to Session">
+        </form>
+    </div>
+    <div id="worddiv" class="iblock">
+        <a href="clear"><button>Clear Session</button></a>
+        {% if words %}
+        {% for w in words %}
+            <p><span class='{{w.color}} {{w.size}}'>{{w.word}}</span> : added at {{w.time}}</p>
+        {% endfor %}
+        {% endif %}
+
+    </div>
+</body>
+</html>

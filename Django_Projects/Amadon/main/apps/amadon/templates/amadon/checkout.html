@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Amadon Shopping</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  {% load static %}
+  <!-- The line above tells Django to be ready to listen for static files -->
+  <link rel="stylesheet" href="{% static 'amadon/css/styles.css' %}">
+  
+</head>
+<body>    
+    <div class="jumbotron text-center" id="header">
+        <h1>Amadon Store</h1>
+        <h6>Buy Cool Coding Dojo Stuff</h6> 
+    </div>    
+    <div class="container" id="wrapper">
+        <!-- Or let Bootstrap automatically handle the layout -->
+        <h4>Thank you for your Business.</h4>
+        <p>We charged your credit card ${{sale}}</p>
+
+        <p>You have ordered {{items}} items so far and spent
+        ${{total}} at Amadon.com.
+        </p>
+        <button class="btn btn-primary mb-2"><a href="/">Go Back</a></button>
+
+               
+        
+        
+    </div> <!-- Wrapper Div end -->
+        <!-- Optional JavaScript ;    Page Loads Faster with these scripts at end  -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>        
+</body>
+</html>

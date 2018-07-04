@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Email Verification</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='email_v.css')}}" />
+
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <div id="content">
+                <h3>Email Verification</h3>
+                <p class='success green'> The Email address you Entered : {{session['email'] }}
+                    is Valid.
+                </p>
+
+                <h2>Email Addresses Entered:</h2>
+                {% if  data: %}
+                {% for stuff in data: %}
+                    <p>{{ stuff.email}}</p>
+                    {# or could use stuff['email'] or ~ data[i]['email'] in an i loop  #}
+
+                {% endfor %}    
+                {% endif %}
+                <button><a href="/">Return</a></button>                       
+                             
+                
+
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
